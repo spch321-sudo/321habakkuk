@@ -5582,7 +5582,7 @@ function vTracks(){
       <div class="stops">${t.stops.map(s => `<div class="stop ${s[2]}">
         <span class="d"></span><span class="r">${esc(s[0])}</span>
         <span style="flex:1">${esc(s[1])}${VMAP['' + s[0]] ? ` <a href="#" onclick="openV('${s[0]}');return false;" class="xs">看</a>` : ''}</span></div>`).join('')}</div>
-      <div class="insight">${esc(t.ins)}</div>
+      <div class="insight">${esc(t.ins).replace(/\*\*(.+?)\*\*/g, '<b>$1</b>')}</div>
       <p class="xs" style="margin:10px 0 0"><span class="lv g">🟢 可上台</span>同字／同字根，可查證</p></div>`;
   });
   return h;
